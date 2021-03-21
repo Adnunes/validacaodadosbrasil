@@ -1,10 +1,14 @@
-from validate_docbr import CNPJ
-from cpf_cnpj import Documento
+from acessoCep import BuscaEndereco
+import requests
+
+cep = '02022030'
+objeto_cep = BuscaEndereco(cep)
+
+a = objeto_cep.acessa_via_cep()
+
+print(a)
+
+'''r = requests.get('https://viacep.com.br/ws/01001000/json/')
 
 
-documento = 353798380001124
-
-cnpj_exemplo = Documento.cria_documento(documento)
-
-print(cnpj_exemplo)
-
+print(r.text)'''
